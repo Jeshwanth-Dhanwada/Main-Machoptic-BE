@@ -28,8 +28,8 @@ export const createEmployeeNodeMapping = async (req: Request, res: Response) => 
 
   try {
 
-    const employee = await Employee.findOne(req.body.empId);
-    const node = await NodeMaster.findOne(req.body.nodeId);
+    const employee = await Employee.findOne(req.body.emp);
+    const node = await NodeMaster.findOne(req.body.node);
     // const shift = await Shift.findOne(req.body.shiftId);
 
 

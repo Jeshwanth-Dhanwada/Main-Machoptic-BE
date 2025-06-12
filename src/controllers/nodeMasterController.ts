@@ -3,54 +3,54 @@ import { InternalServerError } from "../response/InternalServerErrorResponse";
 import * as Joi from "joi";
 import { NodeMaster } from "../entity/NodeMaster";
 
-
-
 const nodeMasterSchema = Joi.object({
   nodeId: Joi.number(),
   id: Joi.string().required(),
   branchId: Joi.string().required(),
-  nodeCategoryId: Joi.string().allow('', null),
+  nodeCategoryId: Joi.string().allow("", null),
   nodeName: Joi.string().required(),
-  itemDescription: Joi.string().allow('', null),
-  nodeType: Joi.string().allow('', null),
-  nodeCategory: Joi.string().allow('', null),
+  itemDescription: Joi.string().allow("", null),
+  nodeType: Joi.string().allow("", null),
+  nodeCategory: Joi.string().allow("", null),
   width: Joi.string().required(),
   height: Joi.string().required(),
   xPosition: Joi.number().required(),
   yPosition: Joi.number().required(),
-  borderColor: Joi.string().allow('', null),
-  borderWidth: Joi.string().allow('', null),
-  borderStyle: Joi.string().allow('', null),
-  fillColor: Joi.string().allow('', null),
-  fillTransparency: Joi.string().allow('', null),
+  borderColor: Joi.string().allow("", null),
+  borderWidth: Joi.string().allow("", null),
+  borderStyle: Joi.string().allow("", null),
+  fillColor: Joi.string().allow("", null),
+  fillTransparency: Joi.string().allow("", null),
   isRootNode: Joi.boolean().required(),
   isParent: Joi.boolean().required(),
-  formula: Joi.string().allow('', null),
-  fuelUsed: Joi.string().allow('', null),
-  fuelUnitsId: Joi.string().allow('', null),
-  capacity: Joi.string().allow('', null),
-  capacityUnitsId: Joi.string().allow('', null),
-  sourcePosition: Joi.string().allow('', null),
-  targetPosition: Joi.string().allow('', null),
-  FontColor: Joi.string().allow('', null),
-  FontStyle: Joi.string().allow('', null),
-  FontSize: Joi.string().allow('', null),
+  formula: Joi.string().allow("", null),
+  fuelUsed: Joi.string().allow("", null),
+  fuelUnitsId: Joi.string().allow("", null),
+  capacity: Joi.string().allow("", null),
+  capacityUnitsId: Joi.string().allow("", null),
+  sourcePosition: Joi.string().allow("", null),
+  targetPosition: Joi.string().allow("", null),
+  FontColor: Joi.string().allow("", null),
+  FontStyle: Joi.string().allow("", null),
+  FontSize: Joi.string().allow("", null),
   userId: Joi.string().required(),
-  borderRadius: Joi.string().allow('', null),
-  units1: Joi.string().allow('', null),
-  units2: Joi.string().allow('', null),
-  unit1Measurable: Joi.string().allow('', null),
-  unit2Mandatory: Joi.string().allow('', null),
-  allowExcessQty: Joi.string().allow('', null),
-  type: Joi.string().allow('', null),
-  parentNode: Joi.string().allow('', null),
-  extent: Joi.string().allow('', null),
-  iconId: Joi.string().allow('', null),
-  nodeImage: Joi.string().allow('', null),
-  inputMeasurable: Joi.string().allow('', null),
-  outputMeasurable: Joi.string().allow('', null),
-  percentage_rejects: Joi.number().allow('', null),
-  date: Joi.date().allow('', null),
+  borderRadius: Joi.string().allow("", null),
+  units1: Joi.string().allow("", null),
+  units2: Joi.string().allow("", null),
+  unit1Measurable: Joi.string().allow("", null),
+  unit2Mandatory: Joi.string().allow("", null),
+  allowExcessQty: Joi.string().allow("", null),
+  type: Joi.string().allow("", null),
+  parentNode: Joi.string().allow("", null),
+  extent: Joi.string().allow("", null),
+  iconId: Joi.string().allow("", null),
+  nodeImage: Joi.string().allow("", null),
+  inputMeasurable: Joi.string().allow("", null),
+  outputMeasurable: Joi.string().allow("", null),
+  borderLeftColor: Joi.string().allow("", null),
+  borderLeftWidth: Joi.string().allow("", null),
+  percentage_rejects: Joi.number().allow("", null),
+  date: Joi.date().allow("", null),
 });
 
 export const createNodeMaster = async (req: Request, res: Response) => {
@@ -90,25 +90,27 @@ export const createNodeMaster = async (req: Request, res: Response) => {
     nodeMaster.capacityUnitsId = req.body.capacityUnitsId;
     nodeMaster.sourcePosition = req.body.sourcePosition;
     nodeMaster.targetPosition = req.body.targetPosition;
-    nodeMaster.FontColor = req.body.FontColor
-    nodeMaster.FontStyle = req.body.FontStyle
-    nodeMaster.FontSize = req.body.FontSize
-    nodeMaster.userId = req.body.userId
-    nodeMaster.borderRadius = req.body.borderRadius
-    nodeMaster.units1 = req.body.units1
-    nodeMaster.units2 = req.body.units2
-    nodeMaster.unit1Measurable = req.body.unit1Measurable
-    nodeMaster.unit2Mandatory = req.body.unit2Mandatory
-    nodeMaster.allowExcessQty = req.body.allowExcessQty
-    nodeMaster.type = req.body.type
-    nodeMaster.parentNode = req.body.parentNode
-    nodeMaster.extent = req.body.extent
-    nodeMaster.iconId = req.body.iconId
-    nodeMaster.inputMeasurable = req.body.inputMeasurable
-    nodeMaster.outputMeasurable = req.body.outputMeasurable
-    nodeMaster.percentage_rejects = req.body.percentage_rejects
-    nodeMaster.date = req.body.date
-    nodeMaster.nodeImage = req.body.nodeImage
+    nodeMaster.FontColor = req.body.FontColor;
+    nodeMaster.FontStyle = req.body.FontStyle;
+    nodeMaster.FontSize = req.body.FontSize;
+    nodeMaster.userId = req.body.userId;
+    nodeMaster.borderRadius = req.body.borderRadius;
+    nodeMaster.units1 = req.body.units1;
+    nodeMaster.units2 = req.body.units2;
+    nodeMaster.unit1Measurable = req.body.unit1Measurable;
+    nodeMaster.unit2Mandatory = req.body.unit2Mandatory;
+    nodeMaster.allowExcessQty = req.body.allowExcessQty;
+    nodeMaster.type = req.body.type;
+    nodeMaster.parentNode = req.body.parentNode;
+    nodeMaster.extent = req.body.extent;
+    nodeMaster.iconId = req.body.iconId;
+    nodeMaster.inputMeasurable = req.body.inputMeasurable;
+    nodeMaster.outputMeasurable = req.body.outputMeasurable;
+    nodeMaster.percentage_rejects = req.body.percentage_rejects;
+    nodeMaster.borderLeftWidth = req.body.borderLeftWidth;
+    nodeMaster.borderLeftColor = req.body.borderLeftColor;
+    nodeMaster.date = req.body.date;
+    nodeMaster.nodeImage = req.body.nodeImage;
     await nodeMaster.save();
     return res.status(201).json(nodeMaster);
   } catch (error) {
@@ -117,11 +119,10 @@ export const createNodeMaster = async (req: Request, res: Response) => {
 };
 
 export const createBulkNodeMaster = async (req: Request, res: Response) => {
-
   if (req.body.nodes.length) {
-    const nodeData = req.body.nodes
+    const nodeData = req.body.nodes;
 
-    let responseData: any = []
+    let responseData: any = [];
 
     for (let i = 0; i < nodeData.length; i++) {
       const element = nodeData[i];
@@ -130,12 +131,9 @@ export const createBulkNodeMaster = async (req: Request, res: Response) => {
       if (error) {
         return res.status(400).json({ error: error.details[0].message });
       }
-
     }
 
-
     try {
-
       for (let i = 0; i < nodeData.length; i++) {
         const element = nodeData[i];
         const nodeMaster = new NodeMaster();
@@ -168,34 +166,34 @@ export const createBulkNodeMaster = async (req: Request, res: Response) => {
         nodeMaster.capacityUnitsId = element.capacityUnitsId;
         nodeMaster.sourcePosition = element.sourcePosition;
         nodeMaster.targetPosition = element.targetPosition;
-        nodeMaster.FontColor = element.FontColor
-        nodeMaster.FontStyle = element.FontStyle
-        nodeMaster.FontSize = element.FontSize
-        nodeMaster.userId = element.userId
-        nodeMaster.borderRadius = element.borderRadius
-        nodeMaster.units1 = element.units1
-        nodeMaster.units2 = element.units2
-        nodeMaster.unit1Measurable = element.unit1Measurable
-        nodeMaster.unit2Mandatory = element.unit2Mandatory
-        nodeMaster.allowExcessQty = element.allowExcessQty
-        nodeMaster.type = element.type
-        nodeMaster.parentNode = element.parentNode
-        nodeMaster.extent = element.extent
-        nodeMaster.iconId = element.iconId
-        nodeMaster.nodeImage = element.nodeImage
-        nodeMaster.inputMeasurable = element.inputMeasurable
-        nodeMaster.outputMeasurable = element.outputMeasurable
-        nodeMaster.percentage_rejects = element.percentage_rejects
-        nodeMaster.date = element.date
+        nodeMaster.FontColor = element.FontColor;
+        nodeMaster.FontStyle = element.FontStyle;
+        nodeMaster.FontSize = element.FontSize;
+        nodeMaster.userId = element.userId;
+        nodeMaster.borderRadius = element.borderRadius;
+        nodeMaster.units1 = element.units1;
+        nodeMaster.units2 = element.units2;
+        nodeMaster.unit1Measurable = element.unit1Measurable;
+        nodeMaster.unit2Mandatory = element.unit2Mandatory;
+        nodeMaster.allowExcessQty = element.allowExcessQty;
+        nodeMaster.type = element.type;
+        nodeMaster.parentNode = element.parentNode;
+        nodeMaster.extent = element.extent;
+        nodeMaster.iconId = element.iconId;
+        nodeMaster.nodeImage = element.nodeImage;
+        nodeMaster.inputMeasurable = element.inputMeasurable;
+        nodeMaster.outputMeasurable = element.outputMeasurable;
+        nodeMaster.percentage_rejects = element.percentage_rejects;
+        nodeMaster.borderLeftColor = element.borderLeftColor;
+        nodeMaster.borderLeftWidth = element.borderLeftWidth;
+        nodeMaster.date = element.date;
         responseData.push(await nodeMaster.save());
-
       }
       return res.status(201).json(responseData);
     } catch (error) {
       return InternalServerError(res, error);
     }
   }
-
 };
 
 export const getAllNodeMaster = async (_: Request, res: Response) => {
@@ -208,7 +206,6 @@ export const getAllNodeMaster = async (_: Request, res: Response) => {
 };
 
 export const updateNodeMaster = async (req: Request, res: Response) => {
-
   const { error } = nodeMasterSchema.validate(req.body);
 
   if (error) {
@@ -218,7 +215,7 @@ export const updateNodeMaster = async (req: Request, res: Response) => {
   try {
     const nodeMaster = await NodeMaster.findOne(req.params.id);
     if (!nodeMaster) {
-      return res.status(404).json({ error: 'nodeMaster not found' });
+      return res.status(404).json({ error: "nodeMaster not found" });
     }
 
     nodeMaster.id = req.body.id;
@@ -251,24 +248,26 @@ export const updateNodeMaster = async (req: Request, res: Response) => {
     nodeMaster.capacityUnitsId = req.body.capacityUnitsId;
     nodeMaster.sourcePosition = req.body.sourcePosition;
     nodeMaster.targetPosition = req.body.targetPosition;
-    nodeMaster.FontColor = req.body.FontColor
-    nodeMaster.FontStyle = req.body.FontStyle
-    nodeMaster.FontSize = req.body.FontSize
-    nodeMaster.userId = req.body.userId
-    nodeMaster.units1 = req.body.units1
-    nodeMaster.units2 = req.body.units2
-    nodeMaster.unit1Measurable = req.body.unit1Measurable
-    nodeMaster.unit2Mandatory = req.body.unit2Mandatory
-    nodeMaster.allowExcessQty = req.body.allowExcessQty
-    nodeMaster.type = req.body.type
-    nodeMaster.parentNode = req.body.parentNode
-    nodeMaster.extent = req.body.extent
-    nodeMaster.iconId = req.body.iconId
-    nodeMaster.nodeImage = req.body.nodeImage
-    nodeMaster.inputMeasurable = req.body.inputMeasurable
-    nodeMaster.outputMeasurable = req.body.outputMeasurable
-    nodeMaster.percentage_rejects = req.body.percentage_rejects
-    nodeMaster.date = req.body.date
+    nodeMaster.FontColor = req.body.FontColor;
+    nodeMaster.FontStyle = req.body.FontStyle;
+    nodeMaster.FontSize = req.body.FontSize;
+    nodeMaster.userId = req.body.userId;
+    nodeMaster.units1 = req.body.units1;
+    nodeMaster.units2 = req.body.units2;
+    nodeMaster.unit1Measurable = req.body.unit1Measurable;
+    nodeMaster.unit2Mandatory = req.body.unit2Mandatory;
+    nodeMaster.allowExcessQty = req.body.allowExcessQty;
+    nodeMaster.type = req.body.type;
+    nodeMaster.parentNode = req.body.parentNode;
+    nodeMaster.extent = req.body.extent;
+    nodeMaster.iconId = req.body.iconId;
+    nodeMaster.nodeImage = req.body.nodeImage;
+    nodeMaster.inputMeasurable = req.body.inputMeasurable;
+    nodeMaster.outputMeasurable = req.body.outputMeasurable;
+    nodeMaster.percentage_rejects = req.body.percentage_rejects;
+    nodeMaster.borderLeftColor = req.body.borderLeftColor;
+    nodeMaster.borderLeftWidth = req.body.borderLeftWidth;
+    nodeMaster.date = req.body.date;
 
     await nodeMaster.save();
     return res.json(nodeMaster);
@@ -278,14 +277,10 @@ export const updateNodeMaster = async (req: Request, res: Response) => {
 };
 
 export const updateBulkNodeMaster = async (req: Request, res: Response) => {
-
   if (req.body.nodes.length) {
-    const nodeData = req.body.nodes
-    console.log(nodeData, "adding")
-
-    let responseData: any = []
-
-
+    const nodeData = req.body.nodes;
+    console.log(nodeData, "adding");
+    let responseData: any = [];
     for (let i = 0; i < nodeData.length; i++) {
       const element = nodeData[i];
       console.log(element);
@@ -295,78 +290,41 @@ export const updateBulkNodeMaster = async (req: Request, res: Response) => {
       if (error) {
         return res.status(400).json({ error: error.details[0].message });
       }
-
     }
-
-
     try {
-
       for (let i = 0; i < nodeData.length; i++) {
         const element = nodeData[i];
         let nodeUpdateData: any;
 
         if (element.nodeId) {
           console.log("update");
-          nodeUpdateData = await updateDataNodeMaster(element)
-        }
-
-        else {
-          nodeUpdateData = await createDataNodeMaster(element)
+          nodeUpdateData = await updateDataNodeMaster(element);
+        } else {
+          nodeUpdateData = await createDataNodeMaster(element);
           console.log("add");
         }
-        // const nodeMaster = await NodeMaster.findOne(element.id);
-        // if (!nodeMaster) {
-        //   return res.status(404).json({ error: 'nodeMaster not found' });
-        // }
-        // nodeMaster.nodeId = element.nodeId;
-
-        // nodeMaster.branchId = element.branchId;
-        // nodeMaster.nodeCategoryId = element.nodeCategoryId;
-        // nodeMaster.nodeName = element.nodeName;
-        // nodeMaster.width = element.width;
-        // nodeMaster.height = element.height;
-        // nodeMaster.xPosition = element.xPosition;
-        // nodeMaster.yPosition = element.yPosition;
-        // nodeMaster.borderColor = element.borderColor;
-        // nodeMaster.borderWidth = element.borderWidth;
-        // nodeMaster.borderStyle = element.borderStyle;
-        // nodeMaster.fillColor = element.fillColor;
-        // nodeMaster.fillTransparency = element.fillTransparency;
-        // nodeMaster.isRootNode = element.isRootNode;
-        // nodeMaster.isParent = element.isParent;
-        // nodeMaster.formula = element.formula;
-        // nodeMaster.inputMaterialId = element.inputMaterialId;
-        // nodeMaster.outputMaterialId = element.outputMaterialId;
-        // nodeMaster.inputMaterialUnitId = element.inputMaterialUnitId;
-        // nodeMaster.outputMaterialUnitId = element.outputMaterialUnitId;
-        // nodeMaster.fuelUsed = element.fuelUsed;
-        // nodeMaster.fuelUnitsId = element.fuelUnitsId;
-        // nodeMaster.capacity = element.capacity;
-        // nodeMaster.capacityUnitsId = element.capacityUnitsId;
         responseData.push(nodeUpdateData);
-
       }
       return res.status(201).json(responseData);
     } catch (error) {
       return InternalServerError(res, error);
     }
   }
-
 };
 
 const updateDataNodeMaster = async (data: any) => {
   const { error } = nodeMasterSchema.validate(data);
 
   if (error) {
-    return { error: error.details[0].message }
+    return { error: error.details[0].message };
   }
 
   try {
     const nodeMaster = await NodeMaster.findOne(data.nodeId);
     if (!nodeMaster) {
-      return { error: 'nodeMaster not found' }
+      return { error: "nodeMaster not found" };
     }
-    console.log(data.borderRadius, "borderRadius,,,,")
+    console.log(data.borderRadius, "borderRadius,,,,");
     nodeMaster.id = data.id;
     nodeMaster.branchId = data.branchId;
     nodeMaster.nodeCategoryId = data.nodeCategoryId;
@@ -397,29 +355,31 @@ const updateDataNodeMaster = async (data: any) => {
     nodeMaster.capacityUnitsId = data.capacityUnitsId;
     nodeMaster.sourcePosition = data.sourcePosition;
     nodeMaster.targetPosition = data.targetPosition;
-    nodeMaster.FontColor = data.FontColor
-    nodeMaster.FontStyle = data.FontStyle
-    nodeMaster.FontSize = data.FontSize
-    nodeMaster.userId = data.userId
-    nodeMaster.units1 = data.units1
-    nodeMaster.units2 = data.units2
-    nodeMaster.unit1Measurable = data.unit1Measurable
-    nodeMaster.unit2Mandatory = data.unit2Mandatory
-    nodeMaster.allowExcessQty = data.allowExcessQty
-    nodeMaster.type = data.type
-    nodeMaster.parentNode = data.parentNode
-    nodeMaster.extent = data.extent
-    nodeMaster.iconId = data.iconId
-    nodeMaster.nodeImage = data.nodeImage
-    nodeMaster.inputMeasurable = data.inputMeasurable
-    nodeMaster.outputMeasurable = data.outputMeasurable
-    nodeMaster.percentage_rejects = data.percentage_rejects
-    nodeMaster.date = data.date
+    nodeMaster.FontColor = data.FontColor;
+    nodeMaster.FontStyle = data.FontStyle;
+    nodeMaster.FontSize = data.FontSize;
+    nodeMaster.userId = data.userId;
+    nodeMaster.units1 = data.units1;
+    nodeMaster.units2 = data.units2;
+    nodeMaster.unit1Measurable = data.unit1Measurable;
+    nodeMaster.unit2Mandatory = data.unit2Mandatory;
+    nodeMaster.allowExcessQty = data.allowExcessQty;
+    nodeMaster.type = data.type;
+    nodeMaster.parentNode = data.parentNode;
+    nodeMaster.extent = data.extent;
+    nodeMaster.iconId = data.iconId;
+    nodeMaster.nodeImage = data.nodeImage;
+    nodeMaster.inputMeasurable = data.inputMeasurable;
+    nodeMaster.outputMeasurable = data.outputMeasurable;
+    nodeMaster.percentage_rejects = data.percentage_rejects;
+    nodeMaster.borderLeftColor = data.borderLeftColor;
+    nodeMaster.borderLeftWidth = data.borderLeftWidth;
+    nodeMaster.date = data.date;
 
     await nodeMaster.save();
-    return nodeMaster
+    return nodeMaster;
   } catch (error) {
-    return error
+    return error;
   }
 };
 
@@ -427,7 +387,7 @@ const createDataNodeMaster = async (data: any) => {
   const { error } = nodeMasterSchema.validate(data);
 
   if (error) {
-    return { error: error.details[0].message }
+    return { error: error.details[0].message };
   }
 
   try {
@@ -462,30 +422,32 @@ const createDataNodeMaster = async (data: any) => {
     nodeMaster.capacityUnitsId = data.capacityUnitsId;
     nodeMaster.sourcePosition = data.sourcePosition;
     nodeMaster.targetPosition = data.targetPosition;
-    nodeMaster.FontColor = data.FontColor
-    nodeMaster.FontStyle = data.FontStyle
-    nodeMaster.FontSize = data.FontSize
-    nodeMaster.userId = data.userId
-    nodeMaster.units1 = data.units1
-    nodeMaster.units2 = data.units2
-    nodeMaster.unit1Measurable = data.unit1Measurable
-    nodeMaster.unit2Mandatory = data.unit2Mandatory
-    nodeMaster.allowExcessQty = data.allowExcessQty
-    nodeMaster.type = data.type
-    nodeMaster.parentNode = data.parentNode
-    nodeMaster.iconId = data.iconId
-    nodeMaster.nodeImage = data.nodeImage
-    nodeMaster.extent = data.extent
-    nodeMaster.inputMeasurable = data.inputMeasurable
-    nodeMaster.outputMeasurable = data.outputMeasurable
-    nodeMaster.percentage_rejects = data.percentage_rejects
-    nodeMaster.date = data.date
+    nodeMaster.FontColor = data.FontColor;
+    nodeMaster.FontStyle = data.FontStyle;
+    nodeMaster.FontSize = data.FontSize;
+    nodeMaster.userId = data.userId;
+    nodeMaster.units1 = data.units1;
+    nodeMaster.units2 = data.units2;
+    nodeMaster.unit1Measurable = data.unit1Measurable;
+    nodeMaster.unit2Mandatory = data.unit2Mandatory;
+    nodeMaster.allowExcessQty = data.allowExcessQty;
+    nodeMaster.type = data.type;
+    nodeMaster.parentNode = data.parentNode;
+    nodeMaster.iconId = data.iconId;
+    nodeMaster.nodeImage = data.nodeImage;
+    nodeMaster.extent = data.extent;
+    nodeMaster.inputMeasurable = data.inputMeasurable;
+    nodeMaster.outputMeasurable = data.outputMeasurable;
+    nodeMaster.percentage_rejects = data.percentage_rejects;
+    nodeMaster.borderLeftColor = data.borderLeftColor;
+    nodeMaster.borderLeftWidth = data.borderLeftWidth;
+    nodeMaster.date = data.date;
     await nodeMaster.save();
 
-    return nodeMaster
+    return nodeMaster;
   } catch (error) {
-    console.log(error)
-    return error
+    console.log(error);
+    return error;
   }
 };
 
@@ -493,7 +455,7 @@ export const deleteNodeMaster = async (req: Request, res: Response) => {
   try {
     const nodeMaster = await NodeMaster.findOne(req.params.id);
     if (!nodeMaster) {
-      return res.status(404).json({ error: 'nodeMaster not found' });
+      return res.status(404).json({ error: "nodeMaster not found" });
     }
 
     await nodeMaster.remove();
@@ -507,11 +469,10 @@ export const nodeMasterById = async (req: Request, res: Response) => {
   try {
     const nodeMaster = await NodeMaster.findOne(req.params.id);
     if (!nodeMaster) {
-      return res.status(404).json({ error: 'Node master not found' });
+      return res.status(404).json({ error: "Node master not found" });
     }
     return res.json(nodeMaster);
   } catch (error) {
     return InternalServerError(res, error);
   }
 };
-

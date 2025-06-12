@@ -14,11 +14,11 @@ let router = express.Router();
 
 router.get("/",getAllNodeMaster);
 // router.post("/upload", uploadFile);
-router.post("/", createNodeMaster);
-router.post("/bulk", createBulkNodeMaster);
 router.put("/bulk", updateBulkNodeMaster);
-router.get("/:id",nodeMasterById);
+router.post("/bulk", createBulkNodeMaster);
 router.put("/:id", updateNodeMaster);
+router.post("/", createNodeMaster);
+router.get("/:id",nodeMasterById);
 router.delete("/:id", deleteNodeMaster);
 
 

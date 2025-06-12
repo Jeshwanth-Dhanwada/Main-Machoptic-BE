@@ -8,7 +8,6 @@ const jwt = require("jsonwebtoken");
 export const loginUser = async (req: Request, res: Response) => {
     try {
         const { userName, password } = req.body;
-        console.log(res);
 
         if (!userName || !password) return res.status(400).json({ message: 'Both username and password are required' });
 
@@ -58,6 +57,7 @@ export const loginUser = async (req: Request, res: Response) => {
         })
 
         res.json({ accessToken, designation, empId, empTypeId,branchId })
+        // res.json({data:{ accessToken, designation, empId, empTypeId,branchId },code:200,message:"Login Successful",isSuccess:true})
 
     } catch (error) {
         return InternalServerError(res, error);
@@ -71,7 +71,6 @@ export const refresh = async (req: Request, res: Response) => {
         if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' });
 
         const refreshToken = cookies.jwt;
-        console.log("REFRESH", refreshToken);
         jwt.verify(
             refreshToken,
             process.env.REFRESH_TOKEN_SECRET as string,
@@ -98,7 +97,6 @@ export const refresh = async (req: Request, res: Response) => {
                         process.env.ACCESS_TOKEN_SECRET,
                         { expiresIn: '30m' }
                     );
-                    console.log(decoded);
                     res.json({ accessToken: accessToken, username: foundUser.username, designation: foundUser.designation, empId: foundUser.empId, empTypeId: foundUser.empTypeId, branchId: foundUser.branchId });
                 } catch (error) {
                     return InternalServerError(res, error);
@@ -113,7 +111,6 @@ export const refresh = async (req: Request, res: Response) => {
 export const logout = async (req: Request, res: Response) => {
     try {
         const cookies = req.cookies;
-        console.log("Cookies", req);
         if (!cookies?.jwt) return res.sendStatus(204)
         res.clearCookie('jwt', { httpOnly: true, sameSite: 'none', secure: true })
         res.json({ message: 'Cookie cleared' })

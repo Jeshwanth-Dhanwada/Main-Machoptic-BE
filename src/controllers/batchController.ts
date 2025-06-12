@@ -160,7 +160,6 @@ export const updateBatch = async (req: Request, res: Response) => {
 // };
 
 export const updateBulkBatch = async (req: Request, res: Response) => {
-  console.log("Incoming");
   if (req.body.newBatch.length) {
     const batchData = req.body.newBatch
 

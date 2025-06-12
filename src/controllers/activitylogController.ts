@@ -362,7 +362,6 @@ export const createActivitylogg = async (req: Request, res: Response) => {
 export const getAllActivityLog = async (_: Request, res: Response) => {
   try {
     const activitylog = await ActivityLog.find();
-    console.log(activitylog, "********************")
     return res.json(activitylog);
   } catch (error) {
     return InternalServerError(res, error);

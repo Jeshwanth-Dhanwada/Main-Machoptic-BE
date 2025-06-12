@@ -94,15 +94,12 @@ export const updateBulkAttendance = async (req: Request, res: Response) => {
         let attendanceUpdateData:any;
 
         if(element.attendanceId){
-          console.log("update");
           attendanceUpdateData = await updateDataAttendance(element)
-          console.log(attendanceData);
 
         }
 
         else{
           attendanceUpdateData = await createDataAttendance(element)
-          console.log("add");
         }
 
         responseData.push(attendanceUpdateData);

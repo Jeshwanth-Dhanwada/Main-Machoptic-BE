@@ -4,12 +4,12 @@
   "port": 1433,
   "username": "jeshwanth",
   "password": "12345678",
-  "database": "NewVeresion1704024",
+  "database": "MachOpticMain",
   "synchronize": true,
   "logging": true,
   "entities": ["dist/entity/**/*.js"],
   "cli": {
-      "entitiesDir": "./src/entity"
+    "entitiesDir": "./src/entity"
   },
   "useUnifiedTopology": true,
   "requestTimeout": 40000
